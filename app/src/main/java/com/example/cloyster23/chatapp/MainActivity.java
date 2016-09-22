@@ -2,6 +2,7 @@ package com.example.cloyster23.chatapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -49,6 +50,9 @@ public class MainActivity extends Activity {
                 intent.putExtra("Kontakt", kontakt.getUsername());
                 startActivity(intent);
             }
+
+            FloatingActionButton fabNyMld = (FloatingActionButton) findViewById(R.id.fabNyMld);
+            fabNyMld.setOnClickListener(new View.setOnClickListener)
 
         });
 
