@@ -13,6 +13,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import static com.example.cloyster23.chatapp.R.id.fabNyMld;
+
 public class MainActivity extends Activity {
     ArrayAdapter<String> adapter;
     ListView listView;
@@ -24,10 +26,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //      adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayOfKontakt);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //  setSupportActionBar(toolbar);
-        //     listView.setAdapter(adapter);
+
 
 
         ArrayList<Kontakt> arrayOfKontakt = new ArrayList<Kontakt>();
@@ -50,8 +50,14 @@ public class MainActivity extends Activity {
                 intent.putExtra("Kontakt", kontakt.getUsername());
                 startActivity(intent);
             }
-
         });
-
+        FloatingActionButton fabNyMld = (FloatingActionButton) findViewById(R.id.fabNyMld);
+        fabNyMld.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NyMeldingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
