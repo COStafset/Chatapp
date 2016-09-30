@@ -42,23 +42,16 @@ public class MainActivity extends Activity {
         kontaktAdapter kontAdapter = new kontaktAdapter(this, arrayOfKontakt);
         ListView listView = (ListView) findViewById(R.id.lvContacts);
         listView.setAdapter(kontAdapter);
-        listView.setOnClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Kontakt kontakt = (Kontakt) parent.getAdapter().getItem(position);
                 Intent intent = new Intent(MainActivity.this, SamtaleActivity.class);
                 intent.putExtra("Kontakt", kontakt.getUsername());
                 startActivity(intent);
-                )   }  }
-                FloatingActionButton fabNyMld  = (FloatingActionButton) findViewById(R.id.fabNyMld);
-                fabNyMld.setOnClickListener (new View.OnClickListener) {
-                @Override
-                public void onItemClick (View v){
-                Intent intent = new Intent(MainActivity.this, NyMeldingActivity.class);
-                startActivity(intent);
             }
-        }
+
+        });
 
     }
-
 }
